@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType, defineArrayMember } from "sanity";
 
 export const post = defineType({
     name: 'post',
@@ -58,7 +58,27 @@ export const post = defineType({
             name: 'content',
             title: 'Content',
             type: 'array',
-            of: [{ type: 'block' }, { type: 'image' }],
+            of: [
+                    defineArrayMember({
+                    type: 'block',
+                    marks: {
+                    annotations: [
+                        {
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        fields: 
+                        [
+                            {
+                            name: 'href',
+                            type: 'url',
+                            title: 'URL'
+                            }
+                        ]
+                        }
+                        ]}
+                    }),
+                { type: 'image' }],
             validation: (Rule) => Rule.required(),
         })
     ]
