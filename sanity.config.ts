@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'Data Fetch Test',
+  title: 'Radix em Português',
 
   projectId: '8pgu90qr',
   dataset: 'production',

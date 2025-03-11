@@ -60,26 +60,37 @@ export const post = defineType({
             type: 'array',
             of: [
                     defineArrayMember({
-                    type: 'block',
-                    marks: {
-                    annotations: [
-                        {
-                        name: 'link',
-                        type: 'object',
-                        title: 'Link',
-                        fields: 
-                        [
-                            {
-                            name: 'href',
-                            type: 'url',
-                            title: 'URL'
-                            }
-                        ]
+                        type: 'block',
+                        marks: {
+                            decorators: [
+                                {title: 'Strong', value: 'strong'},
+                                {title: 'Emphasis', value: 'em'},
+                                {title: 'Code', value: 'code'},
+                                {title: 'Underline', value: 'underline'},    
+                            ],
+                            annotations: [
+                                {
+                                    name: 'link',
+                                    type: 'object',
+                                    title: 'Link',
+                                    fields: 
+                                    [
+                                        {
+                                        name: 'href',
+                                        type: 'url',
+                                        title: 'URL'
+                                        }
+                                    ]
+                                }
+                            ]
                         }
-                        ]}
                     }),
-                { type: 'image' }],
+                    { type: 'image' }
+            ],
             validation: (Rule) => Rule.required(),
         })
     ]
 })
+
+
+// https://sanity-io-land.slack.com/archives/C07CSTHU8EM/p1741539025118649 
