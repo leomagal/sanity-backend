@@ -94,7 +94,10 @@ export const post = defineType({
             ],
             validation: (Rule) => Rule.required(),
         })
-    ]
+    ],
+    initialValue: {
+        highlighted: false
+    }
 })
 
 
