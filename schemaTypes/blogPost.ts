@@ -55,6 +55,11 @@ export const post = defineType({
             }
         }),
         defineField({
+            name: 'highlighted',
+            title: 'Highlighted',
+            type: 'boolean',
+        }),
+        defineField({
             name: 'content',
             title: 'Content',
             type: 'array',
